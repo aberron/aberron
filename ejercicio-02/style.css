@@ -59,7 +59,39 @@ body {
   font-family: var(--font-sans);
 }
 /* Layout */
+style
+p {
+  background-image: url('img_girl.jpg');
+}
 
+.contenedor-subtitulo{
+  background-color: blueviolet;
+}
+.contenedor-subtitulo h3{
+  font-size: 40px;
+  text-align: center;
+}
+.contenedor-subtitulo p{
+  text-align: center;
+}
+.contenedor-subtitulo img{
+  width: 300px;
+  height: 400px;
+
+  /*padding: 40px; no utilizar padding con img*/
+}
+.contenedor{
+margin: 20px 0px 0px 20px
+}
+.contenedor-fila{
+ display: flex;
+
+}
+.contenedor-fila img{
+width: 280px;
+height: auto;
+margin: 0px 20px 20px 0px
+}
 /* Componentes */
 
 /* Utilidades */
