@@ -1,15 +1,16 @@
-@import url('https://rsms.me/inter/inter.css');
-html { font-family: 'Inter', sans-serif; }
+/* Imports & supports */
+/* @import url("https://rsms.me/inter/inter.css");
 @supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
-}
-/* Reset */
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+} */
+/* Reset & Base */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
-
 body,
 h1,
 h2,
@@ -19,29 +20,32 @@ h5,
 p,
 figure,
 picture {
-  margin: 0;
+  margin: 0
 }
-
 body {
+  background: #212121;
   line-height: 1.5;
-  min-height: 100vh;
+  min-height: 100vh
 }
-
 ul {
   margin: 0;
-  padding-inline: 0;
+  padding-inline: 0
 }
-
 li {
-  list-style: none;
+  list-style: none
 }
+a {
+  text-decoration: none
+}
+img{
+  width:400px;
+  height: auto;
 
-img,
+}
 picture {
   max-width: 100%;
-  display: block;
+  display: block
 }
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -49,88 +53,65 @@ picture {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behaviour: auto !important;
+    scroll-behavior: auto !important
   }
 }
-
 /* Variables */
 :root {
-  font-family:'Inter var', sans-serif;
-  /* --size-outline: 3px; // Esto es para cambiar el outline del helper */
-}
+  /* colores */
+  /*   --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%; */
+  /* tipografia */
+  --f-family: "Cinzel Decorative", serif;
+  --f-family2: "Noto Serif Display", sans-serif;
+  --f-size: 24px;
+  --f-weight: 400;
 
-/* Base */
-body {
-  
 }
-/* Layout */
-
-.contenedor-subtitulo{
-  display: grid;
-  height: 500px;
-  background-color: blueviolet;
-  background-image: url(https://res.cloudinary.com/dyk5cl3d8/image/upload/v1644342680/web%206to%20semestre/Spandrel_II_2009_acrylic_paint_on_MDF_mvb65s.jpg);
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.contenedor-subtitulo div{
-  margin: auto;
-  width: 800px;
-}
-.contenedor-subtitulo h3{
-  font-size: 40px;
-
-  text-align: center;
-  color:purple;
-  /*background-color: brown;*/
-}
-.contenedor-subtitulo p{
-  text-align: center;
-  font-weight: bold;
-  color:darkslateblue;
-}
-
-.contenedor{
-margin: 20px 0px 0px 20px
-}
-.contenedor-fila{
- display: flex;
-}
-
-figure {
-  position: relative;
-  margin: auto;
-  width: auto;
-}
-
-figcaption {
-  display: none;
-  color: white;
-  padding: 20px;
-  position: absolute;
-  bottom: 10px;
-}
-figure:hover figcaption {
-  display: block;
-}
-.boton-descargar{
-  align-self: center;
-  background: greenyellow;
-  color: purple;
-  text-align: center;
-}
-.contenedor-fila img{
-width: 280px;
-height: auto;
-margin: 0px 20px 20px 0px
+/* Aplica estas variables a todos los elementos */
+* {
+  font-family: var(--f-family);
+  font-size: var(--f-size);
+  font-weight: var(--f-weight)
 }
 /* Componentes */
-
 /* Utilidades */
 .flex {
-  display: flex;
+  display: flex
 }
 .grid {
-  display: grid;
+  display: grid
+}
+.contenedor {
+  height: 100vh;
+ background-image: url("https://res.cloudinary.com/dyk5cl3d8/image/upload/v1645819066/web%206to%20semestre/Giotto_di_Bondone_035_zttymf.jpg");
+  background-position: center;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  width: 90vw;
+  align: center;
+  margin-inline: auto;
+  align-items: center;
+}
+
+.contenedor h1{
+font-size: 200px;
+color: white;
+text-align: center;
+
+}
+.texto-arriba{
+  text-transform: uppercase;
+  font-family: "Noto Serif Display";
+  color: #E0DEDE;
+  text-align: center;
+
+}
+.texto-abajo{
+  text-transform: uppercase;
+  font-family: "Noto Serif Display";
+  color: #E0DEDE;
+  text-align: center;
+
 }
