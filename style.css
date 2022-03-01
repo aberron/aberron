@@ -84,23 +84,33 @@ picture {
   display: grid
 }
 .contenedor {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
- background-image: url("https://res.cloudinary.com/dyk5cl3d8/image/upload/v1645819066/web%206to%20semestre/Giotto_di_Bondone_035_zttymf.jpg");
-  background-position: center;
-  background-size: 300px;
-  background-repeat: no-repeat;
-  width: 90vw;
-  align: center;
+  width: 100vw;
   margin-inline: auto;
   align-items: center;
 }
-
+.caja{
+  flex:1;
+  position: relative;
+  border: 2px solid white;
+  display: flex;
+}
+.caja picture{
+position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+z-index: -1;
+}
 .contenedor h1{
 font-size: 200px;
 color: white;
 text-align: center;
-
+margin: auto;
 }
+
 .texto-arriba{
   text-transform: uppercase;
   font-family: "Noto Serif Display";
@@ -115,3 +125,4 @@ text-align: center;
   text-align: center;
 
 }
+
