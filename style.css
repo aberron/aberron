@@ -1,16 +1,21 @@
-/* Imports & supports */
-/* @import url("https://rsms.me/inter/inter.css");
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
-} */
-/* Reset & Base */
+/* Imports - Tipografía */
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("https: //res.cloudinary.com/dyk5cl3d8/raw/upload/v1649448006/Portafolio%20Web/LabGrotesque-Regular_lzdqfs.woff"), format("woff");
+}
+
+@font-face {
+  font-family: "Lab Grotesque bold";
+  src: url("https: //res.cloudinary.com/dyk5cl3d8/raw/upload/v1649448006/Portafolio%20Web/LabGrotesque-Regular_lzdqfs.woff"), format("woff");
+}
+
+/* Reset */
 *,
 *::before,
 *::after {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
+
 body,
 h1,
 h2,
@@ -20,117 +25,234 @@ h5,
 p,
 figure,
 picture {
-  margin: 0
+  margin: 0;
 }
+
 body {
-  background-position: center;
-  background-image:url(https://res.cloudinary.com/dyk5cl3d8/image/upload/v1646428007/web%206to%20semestre/_DSC0840_dx2yqy.jpg);
- 
- 
   line-height: 1.5;
-  min-height: 100vh
+  min-height: 100vh;
 }
+
 ul {
   margin: 0;
   padding-inline: 0;
 }
-li {
-  list-style: none
-}
-a {
-  text-decoration: none
-}
-img{
-  width:400px;
-  height: auto;
 
+li {
+  list-style: none;
+}
+
+.menu ul li a{
+text-transform: capitalize;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover {
+  text-decoration: underline;
+  opacity: 80;
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important
+    scroll-behaviour: auto !important;
   }
 }
+
 /* Variables */
 :root {
-  /* colores */
-  /*   --clr-dark: 230 35% 7%;
-  --clr-light: 231 77% 90%;
-  --clr-white: 0 0% 100%; */
-  /* tipografia */
-  --f-family: "Cinzel Decorative", serif;
-  --f-family2: "Noto Serif Display", sans-serif;
-  --f-size: 24px;
-  --f-weight: 400;
-
-}
-/* Aplica estas variables a todos los elementos */
-* {
-  font-family: var(--f-family);
-  font-size: var(--f-size);
-  font-weight: var(--f-weight)
-}
-/* Componentes */
-/* Utilidades */
-.flex {
-  display: flex
-}
-.grid {
-  display: grid
-  
-}
-.contenedor {
-  display: flex;
-  flex-direction: column;
-  height: 80px;
-  width: 100vw;
-  margin-inline: auto;
-  align-items: center;
-}
-.caja{
-  flex:1;
-  position: relative;
-  /*border: 2px solid white;*/
-  display: flex;
-  flex-wrap:wrap;
-  
-
-}
-.caja img{
-  width: 25%;
-  height: auto;
-  flex-wrap:wrap;
-  flex-basis:20%;
-  flex-direction:row;
-  padding: 50px;
-  opacity: 20%;
-  
+  /* 1. Colores */
+  --black: #000000;
+  --white: #ffffff;
+  /* 2. Tipografía */
+  --font-regular: "Lab Grotesque", sans-serif;
+  --font-bold: "Lab Grotesque bold", sans-serif;
+  --font-size-1: 1rem;
+  --font-size-2: 1.1rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 2rem;
+  --font-size-6: 2.5rem;
+  --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
+  --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+  --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
+  /* 3. Layouts */
+  --size-mobile: 414px;
+  --size-desktop: 1440px;
 }
 
-.contenedor h1{
-font-size: 200px;
-color: #000000;
-text-align: center;
-margin: auto;
+/* Base */
+body {
+  font-family: var(--font-regular);
+  background-color: var(--white);
+  color: var(--black);
 }
 
-.texto-arriba{
-  text-transform: uppercase;
-  font-family: "Noto Serif Display";
-  color: #000;
-  text-align: center;
+h1,
+h2 {
+font-size: 16px;
+}
+h3,
+h4,
+h5 {
+  font-family: var(--font-bold);
+}
+/* Home */
+.home  {
+position: relative;
+display: grid;
+height:100vh;
+/* border: 2px solid blue; */
+}
+
+.home ul {
+  padding:1vw;
+  /* background-color: aqua; */
+  display:grid;
+  height: 100vh;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.home ul li:nth-child(1) {
+}
+
+.home ul li:nth-child(2) {
+  justify-self:end;
+}
+.home ul li:nth-child(3) {
+  align-self: end;
+}
+.home ul li:nth-child(4) {
+  align-self: end;
+  justify-self:end;
+}
+.home img {
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%,-50%)
 
 }
-.texto-abajo{
-  text-transform: uppercase;
-  font-family: "Noto Serif Display";
-  color: #000000;
-  text-align: center;
+
+.info{
+  margin: 100px 0 0 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 2fr;
+  grid-template-rows: 4fr 2fr 5fr 4fr;
+}
+
+.info > * {
+padding:1vw;
+}
+.info:nth-child(1) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.info:nth-child(2) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.info:nth-child(3) {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.info .edu {
+  grid-column: 2/3;
+  grid-row: 2/3;
 
 }
 
+.info .centro{
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.info .press{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.info .medios{
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.info .contact{
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.info .redes{
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.info .datos {
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+
+/* // PROJECTS */
+
+.header{
+  padding:1vw;
+  position: sticky;
+  top: 10px;
+}
+.projects{
+  /* margin-top: 40px; */
+  padding:1vw;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+}
+.indice{
+  /* border: 2px solid; */
+  height:max-content;
+  position: sticky;
+  top: 60px;
+}
+
+ .projects ul li:hover {
+   text-decoration: underline;
+ }
+
+.content {
+  top: 60px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  margin-bottom: 120px;
+}
+.content .texto{
+  height:max-content;
+    position: sticky;
+    top: 60px;
+}
+
+.descripcion {
+  margin-top: 15px;
+  padding-right: 20px;
+}
+.fotos img{
+margin-top: 15px;
+margin-left: 15px;
+  }
